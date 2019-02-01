@@ -1,0 +1,233 @@
+<html>
+<head>
+
+<meta charset="utf-8">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="jquery.arctext.js"></script>
+
+
+<style type="text/css">
+/*左上の緑*/
+#b {
+  background-color:#AAFFAA;
+  width:230px;
+  height:153px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+
+
+#base {
+  background-color:#CCFFCC;
+  width:230px;
+  height:153px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(90deg, #AAFFAA, #CCFFCC);
+}
+/*履歴背景*/
+#r_line1 {
+  background-color:#77FFFF;
+  width:270px;
+  height:193px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(90deg, #77E0FF, #99FFFF);
+}
+#r_line1_block {
+  background-color:#FFFFFF;
+  width:270px;
+  height:193px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* 範囲指定 */
+  /*background:linear-gradient(75deg, #CCFFCC 100px, rgba(0, 0, 0, 0) 100px);*/
+  background:linear-gradient(75deg, #AAFFAA 50px, #BFFFBF 100px, rgba(0, 0, 0, 0) 100px);
+}
+/*青ライン*/
+#r_line2 {
+  background-color:#77FFFF;
+  width:280px;
+  height:200px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(90deg, #77E0FF, #99FFFF);
+}
+#r_line2_block {
+  background-color:#CCCCFF;
+  width:280px;
+  height:200px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(75deg, #CCCCFF 103px, rgba(0, 0, 0, 0) 100px);
+}
+#his {
+  /*background-color:#BBFFBB;*/
+  font-size:24px;
+  color:#FFFFFF;
+}
+#h1 {
+  font-size:24px;
+  color:#00FFFF;
+  position:absolute;
+  top:135px;
+  left:113px;
+  transform: rotate(-115deg);
+  -moz-transform: rotate(-115deg);
+  -webkit-transform: rotate(-115deg);
+}
+#h2 {
+  font-size:24px;
+  color:#FFFFFF;
+  position:absolute;
+  top:118px;
+  left:155px;
+  transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+}
+#h3 {
+  font-size:24px;
+  color:#FFFFFF;
+  position:absolute;
+  top:98px;
+  left:185px;
+  transform: rotate(-43deg);
+  -moz-transform: rotate(-43deg);
+  -webkit-transform: rotate(-43deg);
+}
+#r2 {
+  background-color:#FFFFAA;
+  width:346px;
+  height:267px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(90deg, #FFFFAA, #FFFF77);
+}
+#r2_block {
+  background-color:#FFFFAA;
+  width:346px;
+  height:267px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(80deg, #FFFFFF 30px, rgba(0, 0, 0, 0) 0px);
+}
+
+#r3 {
+  background-color:#CCFFCC;
+  width:412px;
+  height:333px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(90deg, #AAFFAA, #77FF77);
+}
+#r3_block {
+  background-color:#CCFFCC;
+  width:346px;
+  height:333px;
+  border-bottom-right-radius:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  background:linear-gradient(80deg, #FFFFFF 30px, rgba(0, 0, 0, 0) 0px);
+}
+#c1 {
+  background-color:#FFFF77;
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  position:absolute;
+  top:198px;
+  left:0px;
+  background:linear-gradient(90deg, #FFFFAA, #FFFF77);
+}
+#c2 {
+  background-color:#77FF77;
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  position:absolute;
+  top:265px;
+  left:0px;
+  background:linear-gradient(90deg, #AAFFAA, #77FF77);
+}
+#c3 {
+  background-color:#FFFFFF;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  position:absolute;
+  top:136px;
+  left:106px;
+}
+
+#header {
+  background-color:#FFFFFF;
+  width:100%;
+  height:30px;
+  position:absolute;
+  top:0px;
+  left:0px;
+}
+</style>
+
+</head>
+
+<body>
+<div id="r3"></div>
+<div id="r3_block"></div>
+<div id="r2"></div>
+<div id="r2_block"></div>
+<div id="r_line2"></div>
+<div id="r_line2_block"></div>
+<div id="r_line1"></div>
+<div id="r_line1_block"></div>
+<div id="base"></div>
+<div id="c1"></div>
+<div id="c2"></div>
+<div id="c3"></div>
+<div id="header"></div>
+
+<!-- ヘッダ部履歴 -->
+<div id="h1">➡</div>
+<div id="h2">履</div>
+<div id="h3">歴</div>
+
+
+<br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
+
+
+<hr>
+<div>
+その他
+</div>
+<script type="text/javascript">
+   $('#his').arctext({radius: 135, dir:-1});
+</script>
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+</body>
+</html>
